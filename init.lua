@@ -10,7 +10,7 @@ require("bruno.plugins.telescope")
 require("bruno.plugins.nvim-cmp")
 require("bruno.plugins.lsp.mason")
 require("bruno.plugins.lsp.lspsaga")
-require("bruno.plugins.lsp.lspconfig")
+require("bruno.plugins.lsp.handlers").setup()
 
 
 
