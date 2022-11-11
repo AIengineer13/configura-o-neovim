@@ -49,7 +49,6 @@ use("bluz71/vim-nightfly-guicolors")
    
   use("kyazdani42/nvim-web-devicons")  
 
-  
   use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
 	use("vim-scripts/ReplaceWithRegister") -- replace with register contents using motion (gr + motion) 
 
@@ -57,9 +56,12 @@ use("bluz71/vim-nightfly-guicolors")
 	use("numToStr/Comment.nvim")
 
 	use("nvim-lualine/lualine.nvim")
-
+ -- telescope  -- telescope  -- telescope  -- telescope  -- telescope  -- telescope  -- telescope  -- telescope  -- telescope 
 use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
 	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
+
+
+--cmp plugins 
 
 use("hrsh7th/nvim-cmp") -- completion plugin
 use("hrsh7th/cmp-buffer") -- source for text in buffer
@@ -75,13 +77,56 @@ use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & f
 use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
 
 
- -- configuring lsp servers
+ -- servidores  LSP 
   use("neovim/nvim-lspconfig") -- easily configure language servers
   use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
   use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
   use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
   use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
+  use ({ 
+    "jayp0521/mason-null-ls.nvim",
+    "jayp0521/mason-nvim-dap.nvim",})
+  
+
+    use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters   
+  use("mfussenegger/nvim-dap")
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
+	use("mfussenegger/nvim-jdtls")
+use("mfussenegger/nvim-dap-python") 
+
+-- treesitter configuration
+  use({
+    "nvim-treesitter/nvim-treesitter",
+    run = function()
+      require("nvim-treesitter.install").update({ with_sync = true })
+    end,
+  })
+ 
+  -- auto closing
+  use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
+  use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
+
+
+use('https://github.com/rktjmp/lush.nvim')
+use('https://github.com/nocksock/bloop.nvim')
+use("https://github.com/rktjmp/lush.nvim")
+
+-- Lua
+
+use { 
+  'olivercederborg/poimandres.nvim',
+  config = function()
+    require('poimandres').setup {
+      -- leave this setup function empty for default config
+      -- or refer to the configuration section
+      -- for configuration options
+    }
+  end
+}
+
+
+use ("rebelot/kanagawa.nvim")
 
 
 

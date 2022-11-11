@@ -11,8 +11,11 @@ require("bruno.plugins.nvim-cmp")
 require("bruno.plugins.lsp.mason")
 require("bruno.plugins.lsp.lspsaga")
 require("bruno.plugins.lsp.handlers").setup()
+require("bruno.plugins.lsp.null-ls") 
+require("bruno.plugins.autopairs") 
+require("bruno.plugins.treesitter")
+require'lspconfig'.hls.setup{}
 
-
-
+ 
 
 
